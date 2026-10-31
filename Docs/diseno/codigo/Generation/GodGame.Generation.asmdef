@@ -1,0 +1,10 @@
+{
+    "name": "GodGame.Generation",
+    "rootNamespace": "GodGame.Generation",
+    "references": ["GodGame.Domain", "Unity.Burst", "Unity.Mathematics", "Unity.Collections"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

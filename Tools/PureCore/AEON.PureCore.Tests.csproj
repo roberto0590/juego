@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Compila y prueba con dotnet las capas C# puras de ÆON (sin Unity):
+    Domain, Generation, Simulation, AI, Save, Rules (solo contratos, sin Rules/Assets),
+    todos los módulos de universo (Assets/_AEON/Universes) y los tests EditMode puros.
+    LangVersion 9.0 = la versión de C# de Unity 6: si alguien usa una característica posterior, falla aquí.
+    Todo se compila en un único ensamblado: los tests NO deben usar miembros 'internal'
+    (en Unity viven en ensamblados distintos).
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>GodGame.Tests</RootNamespace>
+    <AssemblyName>AEON.PureCore.Tests</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Assets\_AEON\Scripts\Domain\**\*.cs" />
+    <Compile Include="..\..\Assets\_AEON\Scripts\Generation\**\*.cs" />
+    <Compile Include="..\..\Assets\_AEON\Scripts\Simulation\**\*.cs" />
+    <Compile Include="..\..\Assets\_AEON\Scripts\AI\**\*.cs" />
+    <Compile Include="..\..\Assets\_AEON\Scripts\Save\**\*.cs" />
+    <!-- Solo el nivel superior de Rules: Rules\Assets usa UnityEngine. -->
+    <Compile Include="..\..\Assets\_AEON\Scripts\Rules\*.cs" />
+    <!-- Todos los módulos de universo; la plantilla queda fuera porque sus archivos terminan en .txt. -->
+    <Compile Include="..\..\Assets\_AEON\Universes\**\*.cs" />
+    <Compile Include="..\..\Assets\_AEON\Tests\EditMode\Pure\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="NUnit" Version="3.14.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

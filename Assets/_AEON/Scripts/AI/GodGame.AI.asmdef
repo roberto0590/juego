@@ -1,0 +1,17 @@
+{
+    "name": "GodGame.AI",
+    "rootNamespace": "GodGame.AI",
+    "references": [
+        "GodGame.Domain",
+        "GodGame.Simulation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

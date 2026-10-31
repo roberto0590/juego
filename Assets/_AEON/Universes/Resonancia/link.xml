@@ -1,0 +1,4 @@
+<linker>
+  <!-- El módulo se descubre por reflexión: IL2CPP no debe eliminar ninguno de sus tipos. -->
+  <assembly fullname="GodGame.Universes.Resonancia" preserve="all"/>
+</linker>

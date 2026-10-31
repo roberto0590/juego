@@ -1,0 +1,26 @@
+{
+    "name": "GodGame.Editor",
+    "rootNamespace": "GodGame.EditorTools",
+    "references": [
+        "GodGame.Domain",
+        "GodGame.Simulation",
+        "GodGame.Rules",
+        "GodGame.Rules.Assets",
+        "GodGame.Core",
+        "GodGame.Presentation",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.GPUDriven.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

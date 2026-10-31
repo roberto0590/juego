@@ -1,0 +1,22 @@
+{
+    "name": "GodGame.Core",
+    "rootNamespace": "GodGame.Core",
+    "references": [
+        "GodGame.Domain",
+        "GodGame.Generation",
+        "GodGame.Simulation",
+        "GodGame.AI",
+        "GodGame.Save",
+        "GodGame.Rules",
+        "GodGame.Rules.Assets"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

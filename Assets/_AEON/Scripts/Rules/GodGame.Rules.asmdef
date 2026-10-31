@@ -1,0 +1,17 @@
+{
+    "name": "GodGame.Rules",
+    "rootNamespace": "GodGame.Rules",
+    "references": [
+        "GodGame.Domain",
+        "GodGame.Simulation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

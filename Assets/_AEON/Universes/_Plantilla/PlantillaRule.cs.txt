@@ -1,0 +1,34 @@
+using GodGame.Domain;
+using GodGame.Rules;
+using GodGame.Simulation;
+
+namespace GodGame.Universes.Plantilla
+{
+    /// <summary>
+    /// PLANTILLA de regla especial (opcional; doc 03 §4.4). Sobrescribe solo lo que necesites:
+    ///  - OnEconomyPhase: se llama una vez por ciclo, tras la economía base, para el universo de esta regla.
+    ///  - ModifyDistanceFactor: ajusta el coste de alcanzar planetas de este universo.
+    /// Reglas de determinismo: usa state.CreateTurnRandom(...) o RandomExtensions.DeriveSeed para el azar,
+    /// recorre listas en su orden de generación y emite claves de mensaje (su texto lo da PlantillaModule.TryGetText).
+    /// Si la borras, quita también su línea en PlantillaModule.CreateSpecialRules.
+    /// </summary>
+    [Preserve]
+    public sealed class PlantillaRule : UniverseRuleBase
+    {
+        public override string RulesId => PlantillaModule.Id;
+
+        public override void OnEconomyPhase(GameState state, Universe universe, TurnReport report)
+        {
+            // Ejemplo: recorrer los planetas del universo en orden de generación.
+            // foreach (var galaxy in universe.galaxies)
+            // foreach (var system in galaxy.systems)
+            // foreach (var planet in system.planets) { ... }
+            // report.Add(new TurnEvent(TurnEventType.UniverseRule, godId, planet.id, true, "rule.plantilla"));
+        }
+
+        public override float ModifyDistanceFactor(GameState state, God god, Planet from, Planet target, float factor)
+        {
+            return factor;
+        }
+    }
+}

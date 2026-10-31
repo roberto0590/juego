@@ -1,0 +1,18 @@
+{
+    "name": "GodGame.Universes.Thalassa",
+    "rootNamespace": "GodGame.Universes.Thalassa",
+    "references": [
+        "GodGame.Domain",
+        "GodGame.Simulation",
+        "GodGame.Rules"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

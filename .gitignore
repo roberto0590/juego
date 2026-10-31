@@ -1,0 +1,45 @@
+# .gitignore de ÆON (basado en la plantilla oficial de Unity)
+
+# Carpetas que genera Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# IDEs
+.vs/
+.idea/
+
+# Proyectos y soluciones que genera Unity (solo en la raíz; Tools/PureCore sí se versiona)
+/*.csproj
+/*.sln
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Salida de build de Addressables
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+
+# Builds y paquetes
+*.apk
+*.aab
+*.unitypackage
+
+# Crashlytics y otros
+crashlytics-build.properties
+sysinfo.txt
+
+# Salidas de dotnet (Tools/PureCore) y SDK local
+Tools/**/bin/
+Tools/**/obj/
+.dotnet/

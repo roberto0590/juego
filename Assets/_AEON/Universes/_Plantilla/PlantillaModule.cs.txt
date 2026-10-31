@@ -1,0 +1,121 @@
+using System.Collections.Generic;
+using GodGame.Domain;
+using GodGame.Rules;
+using GodGame.Simulation;
+
+namespace GodGame.Universes.Plantilla
+{
+    /// <summary>
+    /// PLANTILLA de módulo de universo. Copia la carpeta _Plantilla a Universes/&lt;Nombre&gt;,
+    /// quita la extensión .txt de los archivos y sustituye "Plantilla"/"plantilla" por el nombre real.
+    /// Rellena los valores con la columna del universo en el doc 03 §2 (y §1 / §3 para paleta, especies y regla).
+    /// </summary>
+    [Preserve]
+    public sealed class PlantillaModule : IUniverseModule, IUniverseTexts
+    {
+        // Id estable en minúsculas, sin espacios (p. ej. "fulgor"). No cambiarlo tras publicar.
+        public const string Id = "plantilla";
+
+        public string RulesId => Id;
+
+        public string DisplayName => "Plantilla";
+
+        public UniverseRulesData CreateDefaultRules()
+        {
+            return new UniverseRulesData
+            {
+                id = Id,
+                displayName = "Plantilla",
+                displayNameKey = "universe.plantilla.name",
+                designNotes = "Describe aquí la ley dominante del universo (doc 03 §1 y §3).",
+
+                // Leyes físicas (doc 03 §2)
+                gravityMultiplier = 1.0f,
+                timeFlowRate = 1.0f,
+                timeModel = TimeModel.Lineal,
+                spatialDimensions = 3,
+                lightSpeedFactor = 1.0f,
+                energyType = EnergyType.Gravitica,
+                matterStability = 1.0f,
+                mediumViscosity = 0.0f,
+                beliefToReality = 0.0f,
+
+                // Modificadores de gameplay (doc 03 §2)
+                modifiers = new GameplayModifiers
+                {
+                    faithGain = 1.0f,
+                    divineEnergyGain = 1.0f,
+                    matterGain = 1.0f,
+                    knowledgeGain = 1.0f,
+                    miracleCost = 1.0f,
+                    militaryStrength = 1.0f,
+                    culturalSpread = 1.0f,
+                    techProgress = 1.0f,
+                    travelCost = 1.0f,
+                    civilizationStability = 0.8f
+                },
+
+                // Generación (doc 03 §2: galaxyCount y spiralArms; el resto, valores por defecto)
+                galaxyCount = 2,
+                spiralArms = 2,
+                systemsPerGalaxy = new IntRange(6, 12),
+                planetsPerSystem = new IntRange(2, 7),
+                spectralWeights = new[] { 0.01f, 0.03f, 0.06f, 0.12f, 0.18f, 0.25f, 0.35f },
+
+                // Especies nativas (doc 03 §3 y doc 04)
+                nativeSpeciesIds = new[] { "especie_plantilla" },
+
+                // Dios nativo (doc 03 §1 y doc 02)
+                nativeGodId = "dios_plantilla",
+                nativeGodName = "Dios Plantilla",
+                nativeGodPersonality = new GodPersonality
+                {
+                    aggression = 0.5f, piety = 0.5f, curiosity = 0.5f, diplomacy = 0.5f, greed = 0.5f
+                },
+
+                addressablesLabel = "universe_plantilla"
+            };
+        }
+
+        public UniversePresentationDefaults CreatePresentationDefaults()
+        {
+            // Paleta del doc 03 §1 en RGB 0..1.
+            return new UniversePresentationDefaults
+            {
+                primaryColor = new ColorRgb(0.50f, 0.50f, 0.50f),
+                secondaryColor = new ColorRgb(0.80f, 0.80f, 0.80f),
+                nebulaColor = new ColorRgb(0.20f, 0.10f, 0.40f),
+                atmosphereColor = new ColorRgb(0.50f, 0.70f, 1.00f),
+                cityLightsColor = new ColorRgb(1.00f, 0.85f, 0.50f),
+                orbitWobble = 0.0f,
+                biomeStops = new[]
+                {
+                    new GradientStop(0.00f, new ColorRgb(0.02f, 0.05f, 0.20f)), // fondo marino
+                    new GradientStop(0.40f, new ColorRgb(0.05f, 0.25f, 0.55f)), // mar
+                    new GradientStop(0.47f, new ColorRgb(0.85f, 0.80f, 0.55f)), // costa
+                    new GradientStop(0.60f, new ColorRgb(0.20f, 0.55f, 0.20f)), // llanura
+                    new GradientStop(0.80f, new ColorRgb(0.40f, 0.35f, 0.30f)), // montaña
+                    new GradientStop(1.00f, new ColorRgb(1.00f, 1.00f, 1.00f))  // nieve
+                }
+            };
+        }
+
+        public IEnumerable<UniverseRuleBase> CreateSpecialRules()
+        {
+            // Sin regla especial: devuelve un array vacío.
+            // Con regla especial: return new UniverseRuleBase[] { new PlantillaRule() };
+            return new UniverseRuleBase[0];
+        }
+
+        /// <summary>
+        /// Textos en español de las claves propias del módulo (el messageKey que emite su regla especial).
+        /// La Crónica los muestra; sin texto, la clave aparece tal cual.
+        /// Con regla especial: text = key == "rule.plantilla" ? "texto del evento" : null;
+        /// </summary>
+        public bool TryGetText(string key, out string text)
+        {
+            text = null;
+            return text != null;
+        }
+    }
+}

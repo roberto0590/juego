@@ -1,0 +1,26 @@
+{
+    "name": "GodGame.Presentation",
+    "rootNamespace": "GodGame.Presentation",
+    "references": [
+        "GodGame.Core",
+        "GodGame.Domain",
+        "GodGame.Generation",
+        "GodGame.Simulation",
+        "GodGame.Rules",
+        "GodGame.Rules.Assets",
+        "Unity.Burst",
+        "Unity.Mathematics",
+        "Unity.Collections",
+        "Unity.InputSystem",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
